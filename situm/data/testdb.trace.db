@@ -1,0 +1,8 @@
+2025-03-02 12:28:38.749719+01:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "EDIFICIO" ya existe
+Table "EDIFICIO" already exists; SQL statement:
+CREATE TABLE EDIFICIO () [42101-232]
+2025-03-02 12:28:38.900285+01:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "EDIFICIO" ya existe
+Table "EDIFICIO" already exists; SQL statement:
+CREATE TABLE EDIFICIO () [42101-232]

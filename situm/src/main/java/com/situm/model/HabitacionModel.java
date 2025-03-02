@@ -1,26 +1,47 @@
 package com.situm.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import com.situm.enums.categoria;
+import com.situm.enums.estado;
 
 @Entity
 @Table(name = "habitacion") // Nombre de la tabla en la BD
 @Getter
 @Setter
 public class HabitacionModel {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idHabitacion;
+
+    @Column(name = "IDEDIFICIO")
     private int idEdificio;
+
+    @Column(name = "PLANTA")
     private int NumeroPlanta;
-    private Enum categoria;
+
+    @Column(name = "CATEGORIA")
+    private categoria categoria;
+
+    @Column(name = "CAPACIDAD")
     private int capacidad;
-    private Enum estado;
+
+    @Column(name = "ESTADO")
+    private estado estado;
+
+    @Column(name = "LETRAPUERTA")
     private String letraPuerta;
+
+    @Column(name = "NBAÑOSHABITACION")
     private int numeroBanios;
 
 
-    public HabitacionModel(int idHabitacion, int idEdificio, int numeroPlanta, Enum categoria, int capacidad,
-            Enum estado, String letraPuerta, int numeroBanios) {
+    public HabitacionModel(int idHabitacion, int idEdificio, int numeroPlanta, categoria categoria, int capacidad,
+            estado estado, String letraPuerta, int numeroBanios) {
         this.idHabitacion = idHabitacion;
         this.idEdificio = idEdificio;
         NumeroPlanta = numeroPlanta;
@@ -50,10 +71,10 @@ public class HabitacionModel {
     public void setNumeroPlanta(int numeroPlanta) {
         NumeroPlanta = numeroPlanta;
     }
-    public Enum getCategoria() {
+    public categoria getCategoria() {
         return categoria;
     }
-    public void setCategoria(Enum categoria) {
+    public void setCategoria(categoria categoria) {
         this.categoria = categoria;
     }
     public int getCapacidad() {
@@ -62,10 +83,10 @@ public class HabitacionModel {
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
-    public Enum getEstado() {
+    public estado getEstado() {
         return estado;
     }
-    public void setEstado(Enum estado) {
+    public void setEstado(estado estado) {
         this.estado = estado;
     }
     public String getLetraPuerta() {

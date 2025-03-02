@@ -9,14 +9,29 @@ import com.situm.model.EdificioModel;
 @Repository
 public interface EdificioRepository extends JpaRepository<EdificioModel, Integer> {
 
-public EdificioModel save(EdificioModel edificio);
+public EdificioModel findByNombre(String nombre);
 
-public List findAll();
+public EdificioModel findByDireccion(String direccion);
 
-public EdificioModel findById(int id);
+public EdificioModel findbyNombreEdificio(String nombre);
 
-public EdificioModel deleteById(int id);
+public EdificioModel findbyNombreVia(String nombreVia);
 
-public int count(int id);
+public EdificioModel findbyPais(String pais);
+
+public EdificioModel findbyProvincia(String provincia);
+
+public EdificioModel findbyLocalidad(String localidad);
+
+public EdificioModel findbyCodigoPostal(int codigoPostal);
+
+public EdificioModel findbyCantidadPlantas(int cantidadPlantas);
+
+public EdificioModel findbyCantidadHabitaciones(int cantidadHabitaciones);
+
+public EdificioModel findbyTipoVia(String tipoVia);
+
+public EdificioModel findbyIdEdificio(int idEdificio);
+
 
 }

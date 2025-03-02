@@ -9,10 +9,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
+import org.springframework.stereotype.Service;
 
 import com.situm.model.EdificioModel;
 import com.situm.repository.EdificioRepository;
 
+@Service
 public class EdificioService implements EdificioRepository{
     private EdificioRepository edificioRepository;
     
@@ -31,203 +33,213 @@ public class EdificioService implements EdificioRepository{
 
     @Override
     public void deleteAllByIdInBatch(Iterable<Integer> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllByIdInBatch'");
+        edificioRepository.deleteAllByIdInBatch(ids);
     }
 
     @Override
     public void deleteAllInBatch() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllInBatch'");
+        edificioRepository.deleteAllInBatch();
     }
 
     @Override
     public void deleteAllInBatch(Iterable<EdificioModel> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllInBatch'");
+        edificioRepository.deleteAllInBatch(entities);
     }
 
     @Override
     public <S extends EdificioModel> List<S> findAll(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return edificioRepository.findAll(example);
     }
 
     @Override
     public <S extends EdificioModel> List<S> findAll(Example<S> example, Sort sort) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return edificioRepository.findAll(example, sort);
     }
 
     @Override
     public void flush() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'flush'");
+        edificioRepository.flush();
     }
 
     @Override
     public EdificioModel getById(Integer arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getById'");
+        return edificioRepository.getById(arg0);
     }
 
     @Override
     public EdificioModel getOne(Integer arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getOne'");
+        return edificioRepository.getOne(arg0);
     }
 
     @Override
     public EdificioModel getReferenceById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getReferenceById'");
+        return edificioRepository.getReferenceById(id);
     }
 
     @Override
     public <S extends EdificioModel> List<S> saveAllAndFlush(Iterable<S> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAllAndFlush'");
+        return edificioRepository.saveAllAndFlush(entities);
     }
 
     @Override
     public <S extends EdificioModel> S saveAndFlush(S entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAndFlush'");
+        return edificioRepository.saveAndFlush(entity);
     }
 
     @Override
     public List<EdificioModel> findAllById(Iterable<Integer> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
+        return edificioRepository.findAllById(ids);
     }
 
     @Override
     public <S extends EdificioModel> List<S> saveAll(Iterable<S> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAll'");
+        return edificioRepository.saveAll(entities);
     }
 
     @Override
     public long count() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+    return edificioRepository.count();
     }
 
     @Override
     public void delete(EdificioModel entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        edificioRepository.delete(entity);
     }
 
     @Override
     public void deleteAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+        edificioRepository.deleteAll();
     }
 
     @Override
     public void deleteAll(Iterable<? extends EdificioModel> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+        edificioRepository.deleteAll(entities);
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Integer> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllById'");
+        edificioRepository.deleteAllById(ids);
     }
 
     @Override
     public void deleteById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+        edificioRepository.deleteById(id);
     }
 
     @Override
     public boolean existsById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'existsById'");
+        return edificioRepository.existsById(id);
     }
 
     @Override
     public Optional<EdificioModel> findById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        return edificioRepository.findById(id);
     }
 
     @Override
     public List<EdificioModel> findAll(Sort sort) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return edificioRepository.findAll(sort);
     }
 
     @Override
     public Page<EdificioModel> findAll(Pageable pageable) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return edificioRepository.findAll(pageable);
     }
 
     @Override
     public <S extends EdificioModel> long count(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+        return edificioRepository.count(example);
     }
 
     @Override
     public <S extends EdificioModel> boolean exists(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exists'");
+        return edificioRepository.exists(example);
     }
 
     @Override
     public <S extends EdificioModel> Page<S> findAll(Example<S> example, Pageable pageable) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return edificioRepository.findAll(example, pageable);
     }
 
     @Override
     public <S extends EdificioModel, R> R findBy(Example<S> example,
-            Function<FetchableFluentQuery<S>, R> queryFunction) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findBy'");
+        @SuppressWarnings("null") Function<FetchableFluentQuery<S>, R> queryFunction) {
+        return edificioRepository.findBy(example, queryFunction);
     }
 
     @Override
     public <S extends EdificioModel> Optional<S> findOne(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findOne'");
+        return edificioRepository.findOne(example);
     }
 
     @Override
     public EdificioModel save(EdificioModel edificio) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        return edificioRepository.save(edificio);
     }
 
     @Override
     public List findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return edificioRepository.findAll();
     }
 
     @Override
-    public EdificioModel findById(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    public EdificioModel findByDireccion(String direccion) {
+        return edificioRepository.findByDireccion(direccion);
     }
 
     @Override
-    public EdificioModel deleteById(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+    public EdificioModel findByNombre(String nombre) {
+        return edificioRepository.findByNombre(nombre);
     }
 
     @Override
-    public int count(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+    public EdificioModel findbyCantidadHabitaciones(int cantidadHabitaciones) {
+        return edificioRepository.findbyCantidadHabitaciones(cantidadHabitaciones);
     }
-    
-    
+
+    @Override
+    public EdificioModel findbyCantidadPlantas(int cantidadPlantas) {
+        return edificioRepository.findbyCantidadPlantas(cantidadPlantas);
+    }
+
+    @Override
+    public EdificioModel findbyCodigoPostal(int codigoPostal) {
+        return edificioRepository.findbyCodigoPostal(codigoPostal);
+    }
+
+    @Override
+    public EdificioModel findbyIdEdificio(int idEdificio) {
+        return edificioRepository.findbyIdEdificio(idEdificio);
+    }
+
+    @Override
+    public EdificioModel findbyLocalidad(String localidad) {
+        return edificioRepository.findbyLocalidad(localidad);
+    }
+
+    @Override
+    public EdificioModel findbyNombreEdificio(String nombre) {
+        return edificioRepository.findbyNombreEdificio(nombre);
+    }
+
+    @Override
+    public EdificioModel findbyNombreVia(String nombreVia) {
+        return edificioRepository.findbyNombreVia(nombreVia);
+    }
+
+    @Override
+    public EdificioModel findbyPais(String pais) {
+        return edificioRepository.findbyPais(pais);
+    }
+
+    @Override
+    public EdificioModel findbyProvincia(String provincia) {
+        return edificioRepository.findbyProvincia(provincia);
+    }
+
+    @Override
+    public EdificioModel findbyTipoVia(String tipoVia) {
+        return edificioRepository.findbyTipoVia(tipoVia);
+    }
 
 }

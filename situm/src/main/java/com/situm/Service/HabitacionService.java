@@ -9,224 +9,231 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
+import org.springframework.stereotype.Service;
 
 import com.situm.model.HabitacionModel;
 import com.situm.repository.HabitacionRepository;
 
-public class HabitacionService implements HabitacionRepository{
-    private HabitacionRepository habitacionRepository;
+@Service
+public class HabitacionService implements HabitacionRepository {
+    private final HabitacionRepository habitacionRepository;
 
     public HabitacionService(HabitacionRepository habitacionRepository) {
         this.habitacionRepository = habitacionRepository;
     }
 
-    public HabitacionRepository getHabitacionRepository() {
-        return habitacionRepository;
-    }
-
-    public void setHabitacionRepository(HabitacionRepository habitacionRepository) {
-        this.habitacionRepository = habitacionRepository;
-    }
-
     @Override
     public void deleteAllByIdInBatch(Iterable<Integer> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllByIdInBatch'");
+        habitacionRepository.deleteAllByIdInBatch(ids);
     }
 
     @Override
     public void deleteAllInBatch() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllInBatch'");
+        habitacionRepository.deleteAllInBatch();
     }
 
     @Override
     public void deleteAllInBatch(Iterable<HabitacionModel> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllInBatch'");
+        habitacionRepository.deleteAllInBatch(entities);
     }
 
     @Override
     public <S extends HabitacionModel> List<S> findAll(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return habitacionRepository.findAll(example);
     }
 
     @Override
     public <S extends HabitacionModel> List<S> findAll(Example<S> example, Sort sort) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return habitacionRepository.findAll(example, sort);
     }
 
     @Override
     public void flush() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'flush'");
+        habitacionRepository.flush();
     }
 
     @Override
-    public HabitacionModel getById(Integer arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getById'");
+    public HabitacionModel getById(Integer id) {
+        return habitacionRepository.getById(id);
     }
 
     @Override
-    public HabitacionModel getOne(Integer arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getOne'");
+    public HabitacionModel getOne(Integer id) {
+        return habitacionRepository.getOne(id);
     }
 
     @Override
     public HabitacionModel getReferenceById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getReferenceById'");
+        return habitacionRepository.getReferenceById(id);
     }
 
     @Override
     public <S extends HabitacionModel> List<S> saveAllAndFlush(Iterable<S> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAllAndFlush'");
+        return habitacionRepository.saveAllAndFlush(entities);
     }
 
     @Override
     public <S extends HabitacionModel> S saveAndFlush(S entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAndFlush'");
+        return habitacionRepository.saveAndFlush(entity);
+    }
+
+    @Override
+    public List<HabitacionModel> findAll() {
+        return habitacionRepository.findAll();
     }
 
     @Override
     public List<HabitacionModel> findAllById(Iterable<Integer> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
+        return habitacionRepository.findAllById(ids);
     }
 
     @Override
     public <S extends HabitacionModel> List<S> saveAll(Iterable<S> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAll'");
+        return habitacionRepository.saveAll(entities);
     }
 
     @Override
     public long count() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+        return habitacionRepository.count();
     }
 
     @Override
     public void delete(HabitacionModel entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        habitacionRepository.delete(entity);
     }
 
     @Override
     public void deleteAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+        habitacionRepository.deleteAll();
     }
 
     @Override
     public void deleteAll(Iterable<? extends HabitacionModel> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+        habitacionRepository.deleteAll(entities);
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Integer> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllById'");
+        habitacionRepository.deleteAllById(ids);
     }
 
     @Override
     public void deleteById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+        habitacionRepository.deleteById(id);
     }
 
     @Override
     public boolean existsById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'existsById'");
+        return habitacionRepository.existsById(id);
     }
 
     @Override
     public Optional<HabitacionModel> findById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        return habitacionRepository.findById(id);
+    }
+
+    @Override
+    public <S extends HabitacionModel> S save(S entity) {
+        return habitacionRepository.save(entity);
     }
 
     @Override
     public List<HabitacionModel> findAll(Sort sort) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return habitacionRepository.findAll(sort);
     }
 
     @Override
     public Page<HabitacionModel> findAll(Pageable pageable) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return habitacionRepository.findAll(pageable);
     }
 
     @Override
     public <S extends HabitacionModel> long count(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+        return habitacionRepository.count(example);
     }
 
     @Override
     public <S extends HabitacionModel> boolean exists(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exists'");
+        return habitacionRepository.exists(example);
     }
 
     @Override
     public <S extends HabitacionModel> Page<S> findAll(Example<S> example, Pageable pageable) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return habitacionRepository.findAll(example, pageable);
     }
 
     @Override
-    public <S extends HabitacionModel, R> R findBy(Example<S> example,
-            Function<FetchableFluentQuery<S>, R> queryFunction) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findBy'");
+    public <S extends HabitacionModel, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
+        return habitacionRepository.findBy(example, queryFunction);
     }
 
     @Override
     public <S extends HabitacionModel> Optional<S> findOne(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findOne'");
+        return habitacionRepository.findOne(example);
     }
 
     @Override
-    public HabitacionModel save(HabitacionModel habitacion) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+    public List<HabitacionModel> findByCapacidad(int capacidad) {
+        return habitacionRepository.findByCapacidad(capacidad);
     }
 
     @Override
-    public List findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public List<HabitacionModel> findByCategoria(String categoria) {
+        return habitacionRepository.findByCategoria(categoria);
     }
 
     @Override
-    public List findById(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    public List<HabitacionModel> findByEstado(String estado) {
+        return habitacionRepository.findByEstado(estado);
     }
 
     @Override
-    public List deleteById(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+    public List<HabitacionModel> findByLetraPuerta(String letraPuerta) {
+        return habitacionRepository.findByLetraPuerta(letraPuerta);
     }
 
     @Override
-    public int count(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+    public List<HabitacionModel> findByNumeroBanios(int numeroBanios) {
+        return habitacionRepository.findByNumeroBanios(numeroBanios);
     }
 
-    
+    @Override
+    public List<HabitacionModel> findByNumeroPlanta(int numeroPlanta) {
+        return habitacionRepository.findByNumeroPlanta(numeroPlanta);
+    }
 
+    @Override
+    public List<HabitacionModel> findByidEdificio(int idEdificio) {
+        return habitacionRepository.findByidEdificio(idEdificio);
+    }
+
+    @Override
+    public List<HabitacionModel> findByidEdificioAndCapacidad(int idEdificio, int capacidad) {
+        return habitacionRepository.findByidEdificioAndCapacidad(idEdificio, capacidad);
+    }
+
+    @Override
+    public List<HabitacionModel> findByidEdificioAndCategoria(int idEdificio, String categoria) {
+        return habitacionRepository.findByidEdificioAndCategoria(idEdificio, categoria);
+    }
+
+    @Override
+    public List<HabitacionModel> findByidEdificioAndEstado(int idEdificio, String estado) {
+        return habitacionRepository.findByidEdificioAndEstado(idEdificio, estado);
+    }
+
+    @Override
+    public List<HabitacionModel> findByidEdificioAndLetraPuerta(int idEdificio, String letraPuerta) {
+        return habitacionRepository.findByidEdificioAndLetraPuerta(idEdificio, letraPuerta);
+    }
+
+    @Override
+    public List<HabitacionModel> findByidEdificioAndNumeroBanios(int idEdificio, int numeroBanios) {
+        return habitacionRepository.findByidEdificioAndNumeroBanios(idEdificio, numeroBanios);
+    }
+
+    @Override
+    public List<HabitacionModel> findByidEdificioAndNumeroPlanta(int idEdificio, int numeroPlanta) {
+        return habitacionRepository.findByidEdificioAndNumeroPlanta(idEdificio, numeroPlanta);
+    }
 }

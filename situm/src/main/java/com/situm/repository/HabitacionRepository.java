@@ -10,14 +10,30 @@ import com.situm.model.HabitacionModel;
 @Repository
 public interface HabitacionRepository extends JpaRepository<HabitacionModel, Integer> {
 
-    public HabitacionModel save(HabitacionModel habitacion);
+    public List<HabitacionModel> findByidEdificio(int idEdificio);
 
-    public List findAll();
+    public List<HabitacionModel> findByNumeroPlanta(int NumeroPlanta);
 
-    public List findById(int id);
+    public List<HabitacionModel> findByCategoria(String categoria);
 
-    public List deleteById(int id);
+    public List<HabitacionModel> findByCapacidad(int capacidad);
 
-    public int count(int id);
+    public List<HabitacionModel> findByEstado(String estado);
+
+    public List<HabitacionModel> findByLetraPuerta(String letraPuerta);
+
+    public List<HabitacionModel> findByNumeroBanios(int numeroBanios);
+
+    public List<HabitacionModel> findByidEdificioAndNumeroPlanta(int idEdificio, int NumeroPlanta);
+
+    public List<HabitacionModel> findByidEdificioAndCategoria(int idEdificio, String categoria);
+
+    public List<HabitacionModel> findByidEdificioAndCapacidad(int idEdificio, int capacidad);
+
+    public List<HabitacionModel> findByidEdificioAndEstado(int idEdificio, String estado);
+
+    public List<HabitacionModel> findByidEdificioAndLetraPuerta(int idEdificio, String letraPuerta);
+
+    public List<HabitacionModel> findByidEdificioAndNumeroBanios(int idEdificio, int numeroBanios);    
 
 }
