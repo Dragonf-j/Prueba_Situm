@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ import com.situm.Service.HabitacionService;
 public class HabitacionController {
 
     @Autowired
+    @Lazy
     private HabitacionService habitacionService;
 
     @GetMapping
