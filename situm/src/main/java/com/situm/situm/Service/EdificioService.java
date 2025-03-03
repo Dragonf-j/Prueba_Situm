@@ -1,4 +1,5 @@
-package com.situm.Service;
+package com.situm.situm.Service;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -11,8 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
-import com.situm.model.EdificioModel;
-import com.situm.repository.EdificioRepository;
+import com.situm.situm.Model.EdificioModel;
+import com.situm.situm.Repository.EdificioRepository;
 
 @Service
 public class EdificioService implements EdificioRepository{
@@ -183,64 +184,6 @@ public class EdificioService implements EdificioRepository{
         return edificioRepository.findAll();
     }
 
-    @Override
-    public EdificioModel findByDireccion(String direccion) {
-        return edificioRepository.findByDireccion(direccion);
-    }
 
-    @Override
-    public EdificioModel findByNombre(String nombre) {
-        return edificioRepository.findByNombre(nombre);
-    }
-
-    @Override
-    public EdificioModel findbyCantidadHabitaciones(int cantidadHabitaciones) {
-        return edificioRepository.findbyCantidadHabitaciones(cantidadHabitaciones);
-    }
-
-    @Override
-    public EdificioModel findbyCantidadPlantas(int cantidadPlantas) {
-        return edificioRepository.findbyCantidadPlantas(cantidadPlantas);
-    }
-
-    @Override
-    public EdificioModel findbyCodigoPostal(int codigoPostal) {
-        return edificioRepository.findbyCodigoPostal(codigoPostal);
-    }
-
-    @Override
-    public EdificioModel findbyIdEdificio(int idEdificio) {
-        return edificioRepository.findbyIdEdificio(idEdificio);
-    }
-
-    @Override
-    public EdificioModel findbyLocalidad(String localidad) {
-        return edificioRepository.findbyLocalidad(localidad);
-    }
-
-    @Override
-    public EdificioModel findbyNombreEdificio(String nombre) {
-        return edificioRepository.findbyNombreEdificio(nombre);
-    }
-
-    @Override
-    public EdificioModel findbyNombreVia(String nombreVia) {
-        return edificioRepository.findbyNombreVia(nombreVia);
-    }
-
-    @Override
-    public EdificioModel findbyPais(String pais) {
-        return edificioRepository.findbyPais(pais);
-    }
-
-    @Override
-    public EdificioModel findbyProvincia(String provincia) {
-        return edificioRepository.findbyProvincia(provincia);
-    }
-
-    @Override
-    public EdificioModel findbyTipoVia(String tipoVia) {
-        return edificioRepository.findbyTipoVia(tipoVia);
-    }
 
 }

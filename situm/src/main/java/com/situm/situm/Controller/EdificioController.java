@@ -1,4 +1,4 @@
-package com.situm.controller;
+package com.situm.situm.Controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.situm.model.EdificioModel;
-import com.situm.Service.EdificioService;
+import com.situm.situm.Model.EdificioModel;
+import com.situm.situm.Service.EdificioService;
 
 @RestController
 @RequestMapping("/api/edificios")
@@ -64,3 +64,4 @@ public class EdificioController {
         }
     }
 }
+

@@ -1,4 +1,4 @@
-package com.situm.Service;
+package com.situm.situm.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,8 +11,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
-import com.situm.model.HabitacionModel;
-import com.situm.repository.HabitacionRepository;
+import com.situm.situm.Model.HabitacionModel;
+import com.situm.situm.Repository.HabitacionRepository;
+
 
 @Service
 public class HabitacionService implements HabitacionRepository {
@@ -172,68 +173,6 @@ public class HabitacionService implements HabitacionRepository {
         return habitacionRepository.findOne(example);
     }
 
-    @Override
-    public List<HabitacionModel> findByCapacidad(int capacidad) {
-        return habitacionRepository.findByCapacidad(capacidad);
-    }
 
-    @Override
-    public List<HabitacionModel> findByCategoria(String categoria) {
-        return habitacionRepository.findByCategoria(categoria);
-    }
-
-    @Override
-    public List<HabitacionModel> findByEstado(String estado) {
-        return habitacionRepository.findByEstado(estado);
-    }
-
-    @Override
-    public List<HabitacionModel> findByLetraPuerta(String letraPuerta) {
-        return habitacionRepository.findByLetraPuerta(letraPuerta);
-    }
-
-    @Override
-    public List<HabitacionModel> findByNumeroBanios(int numeroBanios) {
-        return habitacionRepository.findByNumeroBanios(numeroBanios);
-    }
-
-    @Override
-    public List<HabitacionModel> findByNumeroPlanta(int numeroPlanta) {
-        return habitacionRepository.findByNumeroPlanta(numeroPlanta);
-    }
-
-    @Override
-    public List<HabitacionModel> findByidEdificio(int idEdificio) {
-        return habitacionRepository.findByidEdificio(idEdificio);
-    }
-
-    @Override
-    public List<HabitacionModel> findByidEdificioAndCapacidad(int idEdificio, int capacidad) {
-        return habitacionRepository.findByidEdificioAndCapacidad(idEdificio, capacidad);
-    }
-
-    @Override
-    public List<HabitacionModel> findByidEdificioAndCategoria(int idEdificio, String categoria) {
-        return habitacionRepository.findByidEdificioAndCategoria(idEdificio, categoria);
-    }
-
-    @Override
-    public List<HabitacionModel> findByidEdificioAndEstado(int idEdificio, String estado) {
-        return habitacionRepository.findByidEdificioAndEstado(idEdificio, estado);
-    }
-
-    @Override
-    public List<HabitacionModel> findByidEdificioAndLetraPuerta(int idEdificio, String letraPuerta) {
-        return habitacionRepository.findByidEdificioAndLetraPuerta(idEdificio, letraPuerta);
-    }
-
-    @Override
-    public List<HabitacionModel> findByidEdificioAndNumeroBanios(int idEdificio, int numeroBanios) {
-        return habitacionRepository.findByidEdificioAndNumeroBanios(idEdificio, numeroBanios);
-    }
-
-    @Override
-    public List<HabitacionModel> findByidEdificioAndNumeroPlanta(int idEdificio, int numeroPlanta) {
-        return habitacionRepository.findByidEdificioAndNumeroPlanta(idEdificio, numeroPlanta);
-    }
 }
+

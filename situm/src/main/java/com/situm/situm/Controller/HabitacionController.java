@@ -1,4 +1,4 @@
-package com.situm.controller;
+package com.situm.situm.Controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,8 +8,9 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.situm.model.HabitacionModel;
-import com.situm.Service.HabitacionService;
+import com.situm.situm.Model.HabitacionModel;
+import com.situm.situm.Service.HabitacionService;
+
 
 @RestController
 @RequestMapping("/api/habitaciones")
@@ -63,3 +64,4 @@ public class HabitacionController {
         }
     }
 }
+

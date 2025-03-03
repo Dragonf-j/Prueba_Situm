@@ -1,4 +1,4 @@
-package com.situm.model;
+package com.situm.situm.Model;
 
 public @interface Setter {
 

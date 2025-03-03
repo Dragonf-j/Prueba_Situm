@@ -1,13 +1,15 @@
-package com.situm.model;
+package com.situm.situm.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import com.situm.enums.categoria;
-import com.situm.enums.estado;
+import com.situm.situm.Enums.Categoria;
+import com.situm.situm.Enums.Estado;
 
 @Entity
 @Table(name = "habitacion") // Nombre de la tabla en la BD
@@ -16,6 +18,7 @@ import com.situm.enums.estado;
 public class HabitacionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "IDHABITACION")
     private int idHabitacion;
 
     @Column(name = "IDEDIFICIO")
@@ -24,14 +27,16 @@ public class HabitacionModel {
     @Column(name = "PLANTA")
     private int NumeroPlanta;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "CATEGORIA")
-    private categoria categoria;
+    private Categoria categoria;
 
     @Column(name = "CAPACIDAD")
     private int capacidad;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "ESTADO")
-    private estado estado;
+    private Estado estado;
 
     @Column(name = "LETRAPUERTA")
     private String letraPuerta;
@@ -39,12 +44,16 @@ public class HabitacionModel {
     @Column(name = "NBAÑOSHABITACION")
     private int numeroBanios;
 
+    // Constructor sin argumentos
+    public HabitacionModel() {
+    }
 
-    public HabitacionModel(int idHabitacion, int idEdificio, int numeroPlanta, categoria categoria, int capacidad,
-            estado estado, String letraPuerta, int numeroBanios) {
+    // Constructor con argumentos
+    public HabitacionModel(int idHabitacion, int idEdificio, int numeroPlanta, Categoria categoria, int capacidad,
+            Estado estado, String letraPuerta, int numeroBanios) {
         this.idHabitacion = idHabitacion;
         this.idEdificio = idEdificio;
-        NumeroPlanta = numeroPlanta;
+        this.NumeroPlanta = numeroPlanta;
         this.categoria = categoria;
         this.capacidad = capacidad;
         this.estado = estado;
@@ -52,54 +61,69 @@ public class HabitacionModel {
         this.numeroBanios = numeroBanios;
     }
 
-
+    // Getters y setters
     public int getIdHabitacion() {
         return idHabitacion;
     }
+
     public void setIdHabitacion(int idHabitacion) {
         this.idHabitacion = idHabitacion;
     }
+
     public int getIdEdificio() {
         return idEdificio;
     }
+
     public void setIdEdificio(int idEdificio) {
         this.idEdificio = idEdificio;
     }
+
     public int getNumeroPlanta() {
         return NumeroPlanta;
     }
+
     public void setNumeroPlanta(int numeroPlanta) {
         NumeroPlanta = numeroPlanta;
     }
-    public categoria getCategoria() {
+
+    public Categoria getCategoria() {
         return categoria;
     }
-    public void setCategoria(categoria categoria) {
+
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
     public int getCapacidad() {
         return capacidad;
     }
+
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
-    public estado getEstado() {
+
+    public Estado getEstado() {
         return estado;
     }
-    public void setEstado(estado estado) {
+
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
+
     public String getLetraPuerta() {
         return letraPuerta;
     }
+
     public void setLetraPuerta(String letraPuerta) {
         this.letraPuerta = letraPuerta;
     }
+
     public int getNumeroBanios() {
         return numeroBanios;
     }
+
     public void setNumeroBanios(int numeroBanios) {
         this.numeroBanios = numeroBanios;
     }
-
 }
+

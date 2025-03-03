@@ -1,12 +1,14 @@
-package com.situm.model;
+package com.situm.situm.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import com.situm.enums.TipoVia;
+import com.situm.situm.Enums.TipoVia;
 
 @Entity
 @Table(name = "edificio") // Nombre de la tabla en la BD
@@ -15,22 +17,24 @@ import com.situm.enums.TipoVia;
 public class EdificioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "IDEDIFICIO")
     private int idEdificio;
 
     @Column(name = "NOMBREEDIFICIO", length = 50)
     private String nombre;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "TIPOVIA", length = 50)
-    private TipoVia  TipoVia;
+    private TipoVia tipoVia;
 
     @Column(name = "NOMBREVIA", length = 50)
     private String nombreVia;
 
-    @Column(name = "codigo_postal", length = 10)
+    @Column(name = "CODIGOPOSTAL", length = 10)
     private int codigoPostal;
 
-    @Column(name = "cantidad_plantas")
-    private int CantidadPlantas;
+    @Column(name = "CANTIDADPLANTAS")
+    private int cantidadPlantas;
 
     @Column(name = "NHABITACION")
     private int cantidadHabitaciones;
@@ -44,22 +48,25 @@ public class EdificioModel {
     @Column(name = "CIUDAD", length = 50)
     private String localidad;
 
-    public EdificioModel(int idEdificio, String nombre,  TipoVia tipoVia, String nombreVia,  int codigoPostal, int cantidadPlantas, int cantidadHabitaciones, String pais, String provincia, String localidad) {
+    // Constructor sin argumentos
+    public EdificioModel() {
+    }
+
+    // Constructor con argumentos
+    public EdificioModel(int idEdificio, String nombre, TipoVia tipoVia, String nombreVia, int codigoPostal, int cantidadPlantas, int cantidadHabitaciones, String pais, String provincia, String localidad) {
         this.idEdificio = idEdificio;
         this.nombre = nombre;
-        this.TipoVia = tipoVia;
+        this.tipoVia = tipoVia;
         this.nombreVia = nombreVia;
         this.codigoPostal = codigoPostal;
-        this.CantidadPlantas = cantidadPlantas;
+        this.cantidadPlantas = cantidadPlantas;
         this.cantidadHabitaciones = cantidadHabitaciones;
         this.pais = pais;
         this.provincia = provincia;
         this.localidad = localidad;
     }
 
-
-
-
+    // Getters y setters
     public int getIdEdificio() {
         return idEdificio;
     }
@@ -77,10 +84,11 @@ public class EdificioModel {
     }
 
     public TipoVia getTipoVia() {
-        return TipoVia;
+        return tipoVia;
     }
+
     public void setTipoVia(TipoVia tipoVia) {
-        TipoVia = tipoVia;
+        this.tipoVia = tipoVia;
     }
 
     public String getNombreVia() {
@@ -98,13 +106,13 @@ public class EdificioModel {
     public void setCodigoPostal(int codigoPostal) {
         this.codigoPostal = codigoPostal;
     }
-    
+
     public int getCantidadPlantas() {
-        return CantidadPlantas;
+        return cantidadPlantas;
     }
 
     public void setCantidadPlantas(int cantidadPlantas) {
-        CantidadPlantas = cantidadPlantas;
+        this.cantidadPlantas = cantidadPlantas;
     }
 
     public int getCantidadHabitaciones() {
@@ -134,12 +142,8 @@ public class EdificioModel {
     public String getLocalidad() {
         return localidad;
     }
-    
+
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
     }
-
-
-
-
 }
