@@ -15,6 +15,9 @@ import com.situm.situm.Model.HabitacionModel;
 import com.situm.situm.Repository.HabitacionRepository;
 
 
+/**
+ * Esta clase es la encargada de si debe devolver datos de la tabla habitación o realizar alguna operación con ellos
+ */
 @Service
 public class HabitacionService implements HabitacionRepository {
     private final HabitacionRepository habitacionRepository;

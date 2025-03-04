@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 import com.situm.situm.Model.EdificioModel;
 import com.situm.situm.Repository.EdificioRepository;
 
+/**
+ * Esta clase es la encargada de si debe devolver datos de la tabla edificio o realizar alguna operación con ellos
+ */
 @Service
 public class EdificioService implements EdificioRepository{
 

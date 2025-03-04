@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import com.situm.situm.Model.EdificioModel;
 import com.situm.situm.Service.EdificioService;
 
+/**
+ * Esta clase es la encargada de gestionar las peticiones HTTP de la tabla edificio
+ */
 @RestController
 @RequestMapping("/api/edificios")
 public class EdificioController {

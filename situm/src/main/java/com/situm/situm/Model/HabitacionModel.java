@@ -11,10 +11,12 @@ import jakarta.persistence.Table;
 import com.situm.situm.Enums.Categoria;
 import com.situm.situm.Enums.Estado;
 
+/*Clase que se encarga de mapear los atributos de la tabla habitacion en la base de datos
+ * esta clase contiene los atributos de la tabla habitacion en la base de datos
+*/
 @Entity
 @Table(name = "habitacion") // Nombre de la tabla en la BD
-@Getter
-@Setter
+
 public class HabitacionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,14 +29,14 @@ public class HabitacionModel {
     @Column(name = "PLANTA")
     private int NumeroPlanta;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)//Debido a que se usa un Enum se tiene que especificar el tipo, para que no haya errores al momento de mapear
     @Column(name = "CATEGORIA")
     private Categoria categoria;
 
     @Column(name = "CAPACIDAD")
     private int capacidad;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)//Debido a que se usa un Enum se tiene que especificar el tipo, para que no haya errores al momento de mapear
     @Column(name = "ESTADO")
     private Estado estado;
 
@@ -44,7 +46,7 @@ public class HabitacionModel {
     @Column(name = "NBAÑOSHABITACION")
     private int numeroBanios;
 
-    // Constructor sin argumentos
+    // Constructor vacio
     public HabitacionModel() {
     }
 

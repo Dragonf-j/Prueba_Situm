@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import com.situm.situm.Model.HabitacionModel;
 import com.situm.situm.Service.HabitacionService;
 
-
+/**
+ * Esta clase es la encargada de gestionar las peticiones HTTP de la tabla habitación
+ */
 @RestController
 @RequestMapping("/api/habitaciones")
 public class HabitacionController {

@@ -10,10 +10,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import com.situm.situm.Enums.TipoVia;
 
+
+/*Clase que contiene los atributos de la tabla edificio en la base de datos
+ * Esta clase se encarga de mapear los atributos de la tabla edificio en la base de datos
+*/
 @Entity
 @Table(name = "edificio") // Nombre de la tabla en la BD
-@Getter
-@Setter
+
 public class EdificioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +26,7 @@ public class EdificioModel {
     @Column(name = "NOMBREEDIFICIO", length = 50)
     private String nombre;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)//Debido a que se usa un Enum se tiene que especificar el tipo, para que no haya errores al momento de mapear
     @Column(name = "TIPOVIA", length = 50)
     private TipoVia tipoVia;
 
@@ -48,7 +51,7 @@ public class EdificioModel {
     @Column(name = "CIUDAD", length = 50)
     private String localidad;
 
-    // Constructor sin argumentos
+    // Constructor vacio
     public EdificioModel() {
     }
 
